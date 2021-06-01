@@ -1,4 +1,10 @@
+// 不要忘了安装 moment
+//设置时间语言
+const moment = require('moment')
+moment.locale('zh-cn')
+
 module.exports = {
+    base: "/docs/",
     title: "vuepress title",
     description: "vuepress description",
     head: [
@@ -6,6 +12,18 @@ module.exports = {
       ['meta', { name: 'keywords', content: 'ayanami' }],
       ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
+
+    plugins: [
+      [
+        '@vuepress/last-updated',
+        {
+          transformer: (timestamp) => {
+            return moment(timestamp).format('LLLL')
+          }
+        }
+      ]
+    ],
+
     themeConfig: {
       lastUpdated: '更新时间',
     // logo
