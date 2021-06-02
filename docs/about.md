@@ -11,4 +11,7 @@ title: 关于我
 ## 一级标题2
 ## 一级标题3
 
-追加travis自动化部署
+<img class="custom" :src="$withBase('/favicon.ico')" alt="favicon">
+
+![favicon](/favicon.ico)
+
